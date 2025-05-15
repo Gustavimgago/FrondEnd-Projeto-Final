@@ -4,24 +4,29 @@
 
     <form>
 
-        <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)] = "cliente.cliNome" name="cliNome">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="" [(ngModel)] = "cliente.cliNome" name="cliNome">
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="CPF" [(ngModel)] = "cliente.cliCpf" name="cliCpf">
+        <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="###.###.###-##" [(ngModel)] = "cliente.cliCpf" name="cliCpf">
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Email" [(ngModel)] = "cliente.cliEmail" name="cliEmail">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" [(ngModel)] = "cliente.cliEmail" name="cliEmail">
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Telefone" [(ngModel)] = "cliente.cliTelefone" name="cliTelefone">
+        <mat-form-field appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input matInput placeholder="(00) 0000-0000" [(ngModel)] = "cliente.cliTelefone" name="cliTelefone">
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Endereço" [(ngModel)] = "cliente.cliEndereco" name="cliEndereco">
+        <mat-form-field appearance="outline">
+            <mat-label>Endereço</mat-label>
+            <input matInput placeholder="" [(ngModel)] = "cliente.cliEndereco" name="cliEndereco">
         </mat-form-field>
 
     </form>

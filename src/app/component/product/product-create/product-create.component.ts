@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../product-read/product.model';
 import { ProductService } from '../product.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { ProductService } from '../product.service';
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.css']
 })
+
 export class ProductCreateComponent implements OnInit {
 
   // Inicializando o objeto product com valores padrão
@@ -46,4 +48,7 @@ export class ProductCreateComponent implements OnInit {
     // Redirecionando para a página de produtos
     this.router.navigate(['/products']);
   }
+
+  @ViewChild('productForm') productForm!: NgForm;
+  
 }

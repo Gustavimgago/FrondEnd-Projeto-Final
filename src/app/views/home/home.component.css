@@ -1,13 +1,30 @@
-.home .title{
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 1.2;
+.mat-toolbar{
+    background-color:#5a5a5a;
     color: #000000;
-    background-color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    justify-content: center;
 }
 
-.home .subtitle{
-    font-size: 1.1rem;
-    color: #000000;
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .kpi-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+  }
+  
+  .kpi-card {
+    flex: 1 1 200px;
+    text-align: center;
     background-color: #ffffff;
-}
+    color: #000000;
+  }
+  

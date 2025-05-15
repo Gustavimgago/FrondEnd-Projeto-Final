@@ -1,32 +1,39 @@
 <mat-card>
     <mat-card-title>Excluir Produto</mat-card-title>
     <form>
-        <mat-form-field>
-            <input matInput placeholder="Nome" [value]="product.proNome" name="proNome" disabled>
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="" [value]="product.proNome" name="proNome" disabled>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Preço de custo(R$)" [value]="product.proPrecoCusto" name="proPrecoCusto" disabled>
+        <mat-form-field appearance="outline">
+            <mat-label>Preço de custo (R$)</mat-label>
+            <input matInput placeholder="(R$)" [value]="product.proPrecoCusto" name="proPrecoCusto" disabled>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Preço de venda (R$)" [value]="product.proPrecoVenda" name="proPrecoVenda" disabled>
+        <mat-form-field appearance="outline">
+            <mat-label>Preço de venda (R$)</mat-label>
+            <input matInput placeholder="(R$)" [value]="product.proPrecoVenda" name="proPrecoVenda" disabled>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Descrição" [value]="product.proDescricao" name="proDescricao" disabled>
+        <mat-form-field appearance="outline">
+            <mat-label>Descrição</mat-label>
+            <input matInput placeholder="" [value]="product.proDescricao" name="proDescricao" disabled>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Quantidade em Stock" [value]="product.proQuantidadeStock" name="proQuantidadeStock" disabled>
+        <mat-form-field appearance="outline">
+            <mat-label>Quantidade em Stock</mat-label>
+            <input matInput placeholder="" [value]="product.proQuantidadeStock" name="proQuantidadeStock" disabled>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Status" [value]="product.proStatus" name="proStatus" disabled>
+        <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <input matInput placeholder="" [value]="product.proStatus" name="proStatus" disabled>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Marca" [value]="product.proMarca" name="proMarca" disabled>
+        <mat-form-field appearance="outline">
+            <mat-label>Marca</mat-label>
+            <input matInput placeholder="" [value]="product.proMarca" name="proMarca" disabled>
         </mat-form-field>
     </form>
 

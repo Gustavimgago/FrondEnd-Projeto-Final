@@ -1,22 +1,27 @@
 <mat-card>
     <mat-card-title>Nova Forma de Pagamento</mat-card-title>
     <form>
-    
-        <mat-form-field>
-            <input matInput placeholder="Descrição" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Descrição</mat-label>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Tipo" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo" required>
+        <mat-form-field appearance="outline">
+            <mat-label>Tipo</mat-label>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo" required>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Taxa" [(ngModel)]="formaPagamento.fpgTaxa" name="fpgTaxa" required>
+        <mat-form-field appearance="outline">
+            <mat-label>Taxa</mat-label>
+            <input matInput placeholder="%" [(ngModel)]="formaPagamento.fpgTaxa" name="fpgTaxa" required>
         </mat-form-field>
 
-        <mat-form-field>
-            <input matInput placeholder="Parcelamento" [(ngModel)]="formaPagamento.fpgParcelamento" name="fpgParcelamento" required>
+        <mat-form-field appearance="outline">
+            <mat-label>Parcelamento</mat-label>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgParcelamento" name="fpgParcelamento" required>
         </mat-form-field>
+
     </form>
     <div class="button-container">
     <button mat-raised-button (click)="createFormaPagamento()" color="primary">
