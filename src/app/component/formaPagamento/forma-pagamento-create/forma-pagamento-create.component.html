@@ -4,22 +4,22 @@
         
         <mat-form-field appearance="outline">
             <mat-label>Descrição</mat-label>
-            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required maxlength="255" >
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Tipo</mat-label>
-            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo" required>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo" required maxlength="50">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Taxa</mat-label>
-            <input matInput placeholder="%" [(ngModel)]="formaPagamento.fpgTaxa" name="fpgTaxa" required>
+            <input matInput placeholder="%" [(ngModel)]="formaPagamento.fpgTaxa" name="fpgTaxa" required maxlength="6">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Parcelamento</mat-label>
-            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgParcelamento" name="fpgParcelamento" required>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgParcelamento" name="fpgParcelamento" required maxlength="10">
         </mat-form-field>
 
     </form>

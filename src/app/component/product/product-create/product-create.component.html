@@ -7,37 +7,37 @@
     <form>
       <mat-form-field appearance="outline">
         <mat-label>nome</mat-label>
-        <input matInput placeholder="" [(ngModel)]="product.proNome" name="proNome">
+        <input matInput placeholder="" [(ngModel)]="product.proNome" name="proNome" required maxlength="100">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Preço de custo (R$)</mat-label>
-        <input matInput placeholder="R$" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto">
+        <input matInput placeholder="R$" [(ngModel)]="product.proPrecoCusto" name="proPrecoCusto" required maxlength="15">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Preço de venda (R$)</mat-label>
-        <input matInput placeholder="R$" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda">
+        <input matInput placeholder="R$" [(ngModel)]="product.proPrecoVenda" name="proPrecoVenda" required maxlength="50">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Descrição</mat-label>
-        <input matInput placeholder="" [(ngModel)]="product.proDescricao" name="proDescricao">
+        <input matInput placeholder="" [(ngModel)]="product.proDescricao" name="proDescricao" required maxlength="50">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Quantidade em Stock</mat-label>
-        <input matInput placeholder="" [(ngModel)]="product.proQuantidadeStock" name="proQuantidadeStock">
+        <input matInput placeholder="" [(ngModel)]="product.proQuantidadeStock" name="proQuantidadeStock" required maxlength="255">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Status</mat-label>
-        <input matInput placeholder="" [(ngModel)]="product.proStatus" name="proStatus">
+        <input matInput placeholder="" [(ngModel)]="product.proStatus" name="proStatus" required maxlength="10">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Marca</mat-label>
-        <input matInput placeholder="" [(ngModel)]="product.proMarca" name="proMarca">
+        <input matInput placeholder="" [(ngModel)]="product.proMarca" name="proMarca" required maxlength="50">
     </mat-form-field>
     </form>
     

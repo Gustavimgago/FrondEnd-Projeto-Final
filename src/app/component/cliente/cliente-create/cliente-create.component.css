@@ -1,6 +1,7 @@
 form{
     display: flex;
     flex-direction: column;
+    
 }
 
 .button-container {
@@ -33,3 +34,6 @@ button{
     transform: scale(0.95); /* Efeito de pressionar */
     }
     
+    mat-card {
+        box-shadow: none; /* Remove a sombra, se houver */
+    }

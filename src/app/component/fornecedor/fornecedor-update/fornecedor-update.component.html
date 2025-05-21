@@ -1,33 +1,31 @@
 <mat-card>
-    <mat-card-title>Atualizar Fornecedor</mat-card-title>
+    <mat-card-title>Novo Fornecedor</mat-card-title>
     <form>
 
         <mat-form-field appearance="outline">
             <mat-label>Nome Fantasia</mat-label>
-            <input matInput placeholder="" [(ngModel)]="fornecedor.forNomeFantasia" name="forNomeFantasia" required>
+            <input matInput placeholder="" [(ngModel)]="fornecedor.forNomeFantasia" name="forNomeFantasia" required maxlength="100" >
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>CNPJ</mat-label>
-            <input matInput placeholder="00.000.000/0000-00" [(ngModel)]="fornecedor.forCnpj" name="forCnpj" required>
+            <input matInput placeholder="00.000.000/0000-00" [(ngModel)]="fornecedor.forCnpj" name="forCnpj" required maxlength="18" >
         </mat-form-field>
 
         
         <mat-form-field appearance="outline">
             <mat-label>Razão Social</mat-label>
-            <input matInput placeholder="" [(ngModel)]="fornecedor.forRazaoSocial" name="forRazaoSocial" required>
+            <input matInput placeholder="" [(ngModel)]="fornecedor.forRazaoSocial" name="forRazaoSocial" required maxlength="100" >
         </mat-form-field>
-
     </form>
-
 
     <div class="button-container">
     <button mat-raised-button (click)="updateFornecedor()" color="primary">
-        Atualizar
+        Salvar
     </button>
    
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
-    </div>
+</div>
 </mat-card>

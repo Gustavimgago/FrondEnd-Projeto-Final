@@ -1,37 +1,35 @@
 <mat-card>
-    <mat-card-title>Atualizar Forma de Pagamento</mat-card-title>
+    <mat-card-title>Nova Forma de Pagamento</mat-card-title>
     <form>
+        
         <mat-form-field appearance="outline">
             <mat-label>Descrição</mat-label>
-            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgDescricao" name="fpgDescricao" required maxlength="255" >
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Tipo</mat-label>
-            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo" required>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgTipo" name="fpgTipo" required maxlength="50">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Taxa</mat-label>
-            <input matInput placeholder="%" [(ngModel)]="formaPagamento.fpgTaxa" name="fpgTaxa" required>
+            <input matInput placeholder="%" [(ngModel)]="formaPagamento.fpgTaxa" name="fpgTaxa" required maxlength="6">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Parcelamento</mat-label>
-            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgParcelamento" name="fpgParcelamento" required>
+            <input matInput placeholder="" [(ngModel)]="formaPagamento.fpgParcelamento" name="fpgParcelamento" required maxlength="10">
         </mat-form-field>
+
     </form>
-
     <div class="button-container">
-
     <button mat-raised-button (click)="updateFormaPagamento()" color="primary">
-        Atualizar
+        Salvar
     </button>
    
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
-    
-</div>
-
+    </div>
 </mat-card>
