@@ -2,6 +2,6 @@ export interface FormaPagamento{
     fpgId?: number
     fpgDescricao: string
     fpgTipo: string
-    fpgTaxa: number
+    fpgTaxa:  number
     fpgParcelamento: string
 }

@@ -24,8 +24,21 @@ export class ClienteCreateComponent implements OnInit {
   ngOnInit(): void {
       
   }
-
+  
   createCliente(): void {
+  
+    if (
+      !this.cliente.cliNome.trim() ||
+      !this.cliente.cliCpf.trim() ||
+      !this.cliente.cliEmail.trim() ||
+      !this.cliente.cliTelefone.trim() ||
+      !this.cliente.cliEndereco.trim()
+    ) {
+      this.clienteService.showMessage('Por favor, preencha todos os campos obrigatórios!');
+      return;
+    }
+
+
     this.clienteService.create(this.cliente).subscribe(() => {
       this.clienteService.showMessage('Cliente criado!');
       this.router.navigate(['/cliente']);
@@ -33,7 +46,7 @@ export class ClienteCreateComponent implements OnInit {
   }
 
   cancel(): void {
-
     this.router.navigate(['/cliente']);
   }
+
 }

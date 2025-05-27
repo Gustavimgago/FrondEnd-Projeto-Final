@@ -19,6 +19,7 @@ import { ClienteUpdateComponent } from './component/cliente/cliente-update/clien
 import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
 
 
+
 // Define as rotas da aplicação
 const routes: Routes = [
   {

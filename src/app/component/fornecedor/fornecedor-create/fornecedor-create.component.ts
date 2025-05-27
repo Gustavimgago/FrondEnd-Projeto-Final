@@ -24,6 +24,14 @@ export class FornecedorCreateComponent implements OnInit {
   }
 
   createFornecedor(): void {
+
+    if(
+      this.fornecedor.forCnpj <= 0 ||
+      !this.fornecedor.forRazaoSocial.trim() ||
+      !this.fornecedor.forNomeFantasia.trim()
+    ){
+      this.fornecedorService.showMessage('Por favor, preencha todos os campos obrigatoriosss')
+    }
     this.fornecedorService.create(this.fornecedor).subscribe(() => {
       this.fornecedorService.showMessage('Fornecedor criado!');
       this.router.navigate(['/fornecedores']); // Ajuste a rota conforme necessário

@@ -46,6 +46,7 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,6 +75,7 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
     ClienteUpdateComponent,
     ClienteDeleteComponent,
     ClienteCrudComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,7 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

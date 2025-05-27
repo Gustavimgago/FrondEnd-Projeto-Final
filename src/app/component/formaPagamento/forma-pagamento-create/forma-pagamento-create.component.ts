@@ -23,6 +23,16 @@ export class FormaPagamentoCreateComponent implements OnInit {
   ngOnInit(): void { }
 
   createFormaPagamento(): void {
+
+    if(
+      !this.formaPagamento.fpgDescricao.trim() ||
+      !this.formaPagamento.fpgTipo.trim() ||
+       this.formaPagamento.fpgTaxa <= 0 ||
+      !this.formaPagamento.fpgParcelamento.trim()
+    ){
+      this.formaPagamentoService.showMessage('Por favor, preencha todos os campos obrigatorios')
+      return;
+    }
     this.formaPagamentoService.create(this.formaPagamento).subscribe(() => {
       this.formaPagamentoService.showMessage('Forma de pagamento criada!');
       this.router.navigate(['/formaPagamento']); // Corrigido para o caminho correto

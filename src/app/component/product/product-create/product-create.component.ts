@@ -37,6 +37,21 @@ export class ProductCreateComponent implements OnInit {
 
   // Método chamado quando o botão "Salvar" é clicado
   createProduct(): void {
+
+    if(
+      !this.product.proNome.trim() ||
+      this.product.proPrecoCusto <= 0 ||
+      this.product.proPrecoVenda <= 0 ||
+      !this.product.proDescricao.trim() ||
+      this.product.proQuantidadeStock <= 0 ||
+      !this.product.proStatus.trim() ||
+      !this.product.proCategoria.trim() ||
+      !this.product.proCodigoBarras.trim() ||
+      !this.product.proMarca.trim()
+    ){
+      this.productService.showMessage('Por favor, preencha todos os campos obrigatorios')
+      return;
+    }
     this.productService.create(this.product).subscribe(() => {  // Chamando o método create do ProductService para criar o produto
       this.productService.showMessage('Produto criado!'); // Exibindo mensagem de sucesso após criar o produto
       this.router.navigate(['/products']); // Redirecionando para a página de produtos
@@ -48,7 +63,5 @@ export class ProductCreateComponent implements OnInit {
     // Redirecionando para a página de produtos
     this.router.navigate(['/products']);
   }
-
-  @ViewChild('productForm') productForm!: NgForm;
   
 }
