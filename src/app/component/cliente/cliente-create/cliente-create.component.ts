@@ -19,6 +19,8 @@ export class ClienteCreateComponent implements OnInit {
     cliEndereco: '',
   };
 
+
+
   constructor(private clienteService: ClienteService, private router: Router) { }
 
   ngOnInit(): void {
@@ -37,16 +39,18 @@ export class ClienteCreateComponent implements OnInit {
       this.clienteService.showMessage('Por favor, preencha todos os campos obrigatórios!');
       return;
     }
-
-
+  
     this.clienteService.create(this.cliente).subscribe(() => {
       this.clienteService.showMessage('Cliente criado!');
       this.router.navigate(['/cliente']);
     });
+
+
   }
 
   cancel(): void {
     this.router.navigate(['/cliente']);
   }
+  
 
 }
