@@ -14,14 +14,18 @@ export class ClienteCreateComponent implements OnInit {
   cliente: Cliente = { 
     cliNome: "",
     cliCpf: "",
-    conEmail: "",
-    endRua: "",
-    endNumero: "",
-    endCidade: "",
-    endCep: "",
-    endEstado: "",
-    conCelular: "",
-    conTelefoneComercial: ""
+    enderecos: [{
+      endRua: "",
+      endNumero: "",
+      endCidade: "",
+      endCep: "",
+      endEstado: ""
+    }],
+    contatos: [{
+      conEmail: "",
+      conCelular: "",
+      conTelefoneComercial: ""
+    }]
   };
 
 
@@ -33,33 +37,33 @@ export class ClienteCreateComponent implements OnInit {
   
   createCliente(): void {
   
-    if (
+    if (!this.cliente.contatos || !this.cliente.contatos[0] ||
       !this.cliente.cliNome.trim() ||
       !this.cliente.cliCpf.trim() ||
-      !this.cliente.conEmail.trim ||
-      !this.cliente.endRua.trim() ||
-      !this.cliente.endNumero.trim() ||
-      !this.cliente.endCidade.trim() ||
-      !this.cliente.endCep.trim() ||
-      !this.cliente.endEstado.trim() ||
-      !this.cliente.conCelular.trim() ||
-      !this.cliente.conTelefoneComercial.trim() 
-    ) {
-      this.clienteService.showMessage('Por favor, preencha todos os campos obrigatórios!');
-      return;
-    }
+      !this.cliente.contatos[0].conEmail?.trim() || // Operador opcional
+      !this.cliente.contatos[0].conCelular?.trim() ||
+      !this.cliente.contatos[0].conTelefoneComercial?.trim() ||
+      !this.cliente.enderecos?.[0]?.endRua?.trim() ||
+      !this.cliente.enderecos?.[0]?.endNumero?.trim() ||
+      !this.cliente.enderecos?.[0]?.endCidade?.trim() ||
+      !this.cliente.enderecos?.[0]?.endCep?.trim() ||
+      !this.cliente.enderecos?.[0]?.endEstado?.trim()
+  ) {
+    this.clienteService.showMessage('Por favor, preencha todos os campos obrigatórios!');
+    return;
+  }
   
     this.clienteService.create(this.cliente).subscribe(() => {
       this.clienteService.showMessage('Cliente criado!');
       this.router.navigate(['/cliente']);
     });
-
-
   }
+
+
 
   cancel(): void {
     this.router.navigate(['/cliente']);
   }
-  
-
 }
+
+

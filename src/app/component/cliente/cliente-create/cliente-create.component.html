@@ -1,5 +1,4 @@
 <mat-card>
-
     <mat-card-title>Novo Cliente</mat-card-title>
 
     <form>
@@ -16,56 +15,54 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput placeholder="" [(ngModel)]="cliente.conEmail" name="conEmail" required email maxlength="100">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Rua</mat-label>
-            <input matInput placeholder="" [(ngModel)]="cliente.endRua" name="endRua" required>
-        </mat-form-field>
-        
-        <mat-form-field appearance="outline">
-            <mat-label>Número</mat-label>
-            <input matInput placeholder="" [(ngModel)]="cliente.endNumero" name="endNumero" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Cidade</mat-label>
-            <input matInput placeholder="" [(ngModel)]="cliente.endCidade" name="endCidade" required>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>CEP</mat-label>
-            <input matInput placeholder="#####-###" [(ngModel)]="cliente.endCep" name="endCep" required maxlength="10">
-        </mat-form-field>
-
-        <mat-form-field appearance="outline">
-            <mat-label>Estado</mat-label>
-            <input matInput placeholder="" [(ngModel)]="cliente.endEstado" name="endEstado" required>
+            <input matInput placeholder="" [(ngModel)]="cliente.contatos[0].conEmail" name="conEmail" required email maxlength="100">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Celular</mat-label>
-            <input matInput placeholder="(00) 00000-0000" [(ngModel)]="cliente.conCelular" name="conCelular" required>
+            <input matInput placeholder="(00) 00000-0000" [(ngModel)]="cliente.contatos[0].conCelular" name="conCelular" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Telefone Comercial</mat-label>
-            <input matInput placeholder="(00) 0000-0000" [(ngModel)]="cliente.conTelefoneComercial" name="conTelefoneComercial" required>
+            <input matInput placeholder="(00) 0000-0000" [(ngModel)]="cliente.contatos[0].conTelefoneComercial" name="conTelefoneComercial" required>
         </mat-form-field>
-    
+
+        <mat-form-field appearance="outline">
+            <mat-label>Rua</mat-label>
+            <input matInput placeholder="" [(ngModel)]="cliente.enderecos[0].endRua" name="endRua" required>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Número</mat-label>
+            <input matInput placeholder="" [(ngModel)]="cliente.enderecos[0].endNumero" name="endNumero" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input matInput placeholder="" [(ngModel)]="cliente.enderecos[0].endCidade" name="endCidade" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>CEP</mat-label>
+            <input matInput placeholder="#####-###" [(ngModel)]="cliente.enderecos[0].endCep" name="endCep" required maxlength="10">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+            <input matInput placeholder="" [(ngModel)]="cliente.enderecos[0].endEstado" name="endEstado" required>
+        </mat-form-field>
+
     </form>
 
     <div class="button-container">
-     <button id="botaoSalvarCliente" mat-raised-button (click)="createCliente()" color="primary">
-         Salvar
-     </button>
+        <button id="botaoSalvarCliente" mat-raised-button (click)="createCliente()" color="primary">
+            Salvar
+        </button>
 
-     <button id="botaoCancelarCliente" mat-raised-button (click)="cancel()">
-         Cancelar
-     </button>
-
+        <button id="botaoCancelarCliente" mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
     </div>
-
-
 </mat-card>
+

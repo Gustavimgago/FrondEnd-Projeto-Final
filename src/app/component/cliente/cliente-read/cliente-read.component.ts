@@ -14,14 +14,8 @@ export class ClienteReadComponent implements OnInit{
     'cliId', 
     'cliNome', 
     'cliCpf', 
-    'conEmail',
-    'endRua', 
-    'endNumero', 
-    'endCidade', 
-    'endCep', 
-    'endEstado', 
-    'conCelular', 
-    'conTelefoneComercial', 
+    'enderecos',
+    'contatos', 
     'action'
   ];
 
