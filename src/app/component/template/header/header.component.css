@@ -21,3 +21,7 @@
 .header .title-group i {
     padding-right: 5px; /* Adiciona um espaço à direita do ícone dentro do grupo de título */
 }
+
+.header .Space {
+    padding-left: 10px;
+}

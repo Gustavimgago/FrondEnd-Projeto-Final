@@ -11,14 +11,18 @@ import { Router } from '@angular/router';
 })
 export class ClienteCreateComponent implements OnInit {
 
-  cliente: Cliente = {
-    cliNome: '',
-    cliCpf: '',
-    cliEmail: '',
-    cliTelefone: '',
-    cliEndereco: '',
+  cliente: Cliente = { 
+    cliNome: "",
+    cliCpf: "",
+    conEmail: "",
+    endRua: "",
+    endNumero: "",
+    endCidade: "",
+    endCep: "",
+    endEstado: "",
+    conCelular: "",
+    conTelefoneComercial: ""
   };
-
 
 
   constructor(private clienteService: ClienteService, private router: Router) { }
@@ -32,9 +36,14 @@ export class ClienteCreateComponent implements OnInit {
     if (
       !this.cliente.cliNome.trim() ||
       !this.cliente.cliCpf.trim() ||
-      !this.cliente.cliEmail.trim() ||
-      !this.cliente.cliTelefone.trim() ||
-      !this.cliente.cliEndereco.trim()
+      !this.cliente.conEmail.trim ||
+      !this.cliente.endRua.trim() ||
+      !this.cliente.endNumero.trim() ||
+      !this.cliente.endCidade.trim() ||
+      !this.cliente.endCep.trim() ||
+      !this.cliente.endEstado.trim() ||
+      !this.cliente.conCelular.trim() ||
+      !this.cliente.conTelefoneComercial.trim() 
     ) {
       this.clienteService.showMessage('Por favor, preencha todos os campos obrigatórios!');
       return;
