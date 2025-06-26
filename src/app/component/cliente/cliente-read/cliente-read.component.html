@@ -18,16 +18,16 @@
         </ng-container>
 
         <ng-container matColumnDef="enderecos">
-            <th mat-header-cell *matHeaderCellDef> Endereços </th>
+            <th mat-header-cell *matHeaderCellDef> Endereço </th>
             <td mat-cell *matCellDef="let row">
               <div *ngFor="let endereco of row.enderecos">
-                {{endereco.endRua}}, {{endereco.endNumero}}, {{endereco.endCidade}}, {{endereco.endEstado}}
+                {{endereco.endRua}}, Nº {{endereco.endNumero}}, Cidade {{endereco.endCidade}}, Estado {{endereco.endEstado}}
               </div>
             </td>
           </ng-container>
-          
+
           <ng-container matColumnDef="contatos">
-            <th mat-header-cell *matHeaderCellDef> Contatos </th>
+            <th mat-header-cell *matHeaderCellDef> Contato </th>
             <td mat-cell *matCellDef="let row">
               <div *ngFor="let contato of row.contatos">
                 {{contato.conEmail}}, {{contato.conCelular}}

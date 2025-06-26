@@ -22,14 +22,39 @@ export class ClienteUpdateComponent {
         this.cliente = cliente
       })
     }
-
     updateCliente(): void {
+      console.log('Cliente a ser atualizado:', this.cliente); // Adicione este log
+      // Verifica se existem contatos e endereços
+      if (!this.cliente.contatos || !this.cliente.contatos[0] || !this.cliente.enderecos || !this.cliente.enderecos[0]) {
+        this.clienteService.showMessage('Por favor, preencha todos os campos obrigatórios!');
+        return;
+      }
+      // Validação dos campos
+      if (
+        !this.cliente.cliNome.trim() ||
+        !this.cliente.cliCpf.trim() ||
+        !this.cliente.contatos[0].conEmail?.trim() ||
+        !this.cliente.contatos[0].conCelular?.trim() ||
+        !this.cliente.contatos[0].conTelefoneComercial?.trim() ||
+        !this.cliente.enderecos[0].endRua?.trim() ||
+        !this.cliente.enderecos[0].endNumero?.trim() ||
+        !this.cliente.enderecos[0].endCidade?.trim() ||
+        !this.cliente.enderecos[0].endCep?.trim() ||
+        !this.cliente.enderecos[0].endEstado?.trim()
+      ) {
+        this.clienteService.showMessage('Por favor, preencha todos os campos obrigatórios!');
+        return;
+      }
+      // Chamada ao serviço para atualizar o cliente
       this.clienteService.update(this.cliente).subscribe(() => {
-        this.clienteService.showMessage('Cliente atualizado com sucesso!')
-        this.router.navigate(['/cliente'])
-      })
+        this.clienteService.showMessage('Cliente atualizado com sucesso!');
+        this.router.navigate(['/cliente']);
+      }, error => {
+        console.error('Erro ao atualizar cliente:', error); // Adicione este log
+        this.clienteService.showMessage('Erro ao atualizar cliente: ' + error.message);
+      });
     }
-
+    
     cancel(): void {
       this.router.navigate(['/cliente'])
     }
