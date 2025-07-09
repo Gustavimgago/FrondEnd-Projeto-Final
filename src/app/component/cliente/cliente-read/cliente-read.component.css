@@ -9,3 +9,10 @@ table{ /* Estilo para a tabela */
 .delete > i{ /* Estilo para o ícone de exclusão */
     color: #e35e6b;
 }
+
+.search-field {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px; /* Espaçamento abaixo da barra de pesquisa */
+}
+
