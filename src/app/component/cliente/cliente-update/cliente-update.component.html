@@ -1,60 +1,71 @@
 <mat-card>
+
     <mat-card-title>Atualizar Cliente</mat-card-title>
-    <form>
+    
+    <form #form="ngForm">
+
       <mat-form-field appearance="outline">
-        <mat-label>Nome</mat-label>
-        <input matInput [(ngModel)]="cliente.cliNome" name="cliNome" required maxlength="100">
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="" [(ngModel)]="cliente.cliNome" name="cliNome" required maxlength="100">
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>CPF</mat-label>
-        <input matInput [(ngModel)]="cliente.cliCpf" name="cliCpf" required maxlength="14">
+          <mat-label>CPF</mat-label>
+          <input matInput placeholder="###.###.###-##" [(ngModel)]="cliente.cliCpf" name="cliCpf" required maxlength="14">
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="cliente.contatos[0].conEmail" name="conEmail" required email maxlength="100">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="" [(ngModel)]="cliente.conEmail" name="conEmail" required email maxlength="100">
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>Celular</mat-label>
-        <input matInput [(ngModel)]="cliente.contatos[0].conCelular" name="conCelular" required>
+          <mat-label>Celular</mat-label>
+          <input matInput placeholder="(00) 00000-0000" [(ngModel)]="cliente.conCelular" name="conCelular" required>
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>Telefone Comercial</mat-label>
-        <input matInput [(ngModel)]="cliente.contatos[0].conTelefoneComercial" name="conTelefoneComercial" required>
+          <mat-label>Telefone Comercial</mat-label>
+          <input matInput placeholder="(00) 0000-0000" [(ngModel)]="cliente.conTelefoneComercial" name="conTelefoneComercial">
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>Rua</mat-label>
-        <input matInput [(ngModel)]="cliente.enderecos[0].endRua" name="endRua" required>
+          <mat-label>Rua</mat-label>
+          <input matInput placeholder="" [(ngModel)]="cliente.endRua" name="endRua" required>
       </mat-form-field>
-  
+      
       <mat-form-field appearance="outline">
-        <mat-label>Número</mat-label>
-        <input matInput [(ngModel)]="cliente.enderecos[0].endNumero" name="endNumero" required>
+          <mat-label>Número</mat-label>
+          <input matInput placeholder="" [(ngModel)]="cliente.endNumero" name="endNumero" required>
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>Cidade</mat-label>
-        <input matInput [(ngModel)]="cliente.enderecos[0].endCidade" name="endCidade" required>
+          <mat-label>Cidade</mat-label>
+          <input matInput placeholder="" [(ngModel)]="cliente.endCidade" name="endCidade" required>
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>CEP</mat-label>
-        <input matInput [(ngModel)]="cliente.enderecos[0].endCep" name="endCep" required maxlength="10">
+          <mat-label>CEP</mat-label>
+          <input matInput placeholder="#####-###" [(ngModel)]="cliente.endCep" name="endCep" required maxlength="10">
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline">
-        <mat-label>Estado</mat-label>
-        <input matInput [(ngModel)]="cliente.enderecos[0].endEstado" name="endEstado" required>
+          <mat-label>Estado</mat-label>
+          <input matInput placeholder="" [(ngModel)]="cliente.endEstado" name="endEstado" required>
       </mat-form-field>
-    </form>
+
+  </form>
   
     <div class="button-container">
-      <button mat-raised-button (click)="updateCliente()" color="primary">Atualizar</button>
-      <button mat-raised-button (click)="cancel()">Cancelar</button>
+
+      <button mat-raised-button (click)="updateCliente()" color="primary">
+        Atualizar
+      </button>
+
+      <button mat-raised-button (click)="cancel()">
+        Cancelar
+      </button>
+      
     </div>
   </mat-card>
   
