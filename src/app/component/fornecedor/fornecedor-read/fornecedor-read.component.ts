@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Fornecedor } from './fornecedor.model';
 import { FornecedorService } from '../fornecedor.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-fornecedor-read',
@@ -8,15 +9,21 @@ import { FornecedorService } from '../fornecedor.service';
   styleUrls: ['./fornecedor-read.component.css']
 })
 export class FornecedorReadComponent implements OnInit { 
-  fornecedores!: Fornecedor[]; 
+  fornecedores!: MatTableDataSource<Fornecedor>; 
   displayedColumns = ['forId', 'forNomeFantasia', 'forCnpj', 'forRazaoSocial', 'action']; 
 
   constructor(private fornecedorService: FornecedorService) { }
 
   ngOnInit(): void {
     this.fornecedorService.read().subscribe(fornecedores => { 
-      this.fornecedores = fornecedores; 
-      console.log(this.fornecedores);
+      this.fornecedores = new MatTableDataSource (fornecedores); 
+      console.log(fornecedores);
     });
   }
+
+  aplicarFiltro(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.fornecedores.filter = filterValue.trim().toLowerCase(); // Aplica o filtro
+  }
+
 }

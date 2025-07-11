@@ -1,3 +1,11 @@
+<div class="BarraPesquica">
+    <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Pesquisar</mat-label>
+        <input matInput (keyup)="aplicarFiltro($event)" placeholder="Digite para filtrar...">
+    </mat-form-field>
+  </div>
+
+
 <div class="mat-elevation-z4">
     <table mat-table [dataSource]="formaPagamentos"> <!-- Corrigido para plural -->
         <!-- Id Column -->
