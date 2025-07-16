@@ -13,6 +13,8 @@
             <input matInput placeholder="###.###.###-##" [(ngModel)]="cliente.cliCpf" name="cliCpf" required maxlength="14">
         </mat-form-field>
 
+        <mat-label class="Contato">Contato</mat-label>
+
         <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput placeholder="" [(ngModel)]="cliente.conEmail" name="conEmail" required email maxlength="100">
@@ -27,6 +29,8 @@
             <mat-label>Telefone Comercial</mat-label>
             <input matInput placeholder="(00) 0000-0000" [(ngModel)]="cliente.conTelefoneComercial" name="conTelefoneComercial">
         </mat-form-field>
+
+        <mat-label class="Endereco">Endereço</mat-label>
 
         <mat-form-field appearance="outline">
             <mat-label>Rua</mat-label>

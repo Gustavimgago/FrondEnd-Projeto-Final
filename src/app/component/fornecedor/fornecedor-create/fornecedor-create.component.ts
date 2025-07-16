@@ -11,10 +11,23 @@ import { FornecedorService } from '../fornecedor.service'; // Ajuste o caminho c
 export class FornecedorCreateComponent implements OnInit {
 
   fornecedor: Fornecedor = {
-    forCnpj: 0,                // Inicializado como 0
-    forRazaoSocial: '',        // Inicializado como string vazia
-    forNomeFantasia: ''        // Inicializado como string vazia
+    forNomeFantasia: '',
+    forCnpj: '',              // Corrigido para string
+    forRazaoSocial: '',
+  
+
+    conEmail: '',
+    conCelular: '',
+    conTelefoneComercial: '',
+
+    endRua: '',
+    endNumero: '',
+    endCidade: '',
+    endCep: '',
+    endEstado: ''
+
   };
+
 
   // Importando FornecedorService
   constructor(private fornecedorService: FornecedorService, private router: Router) { }
@@ -24,17 +37,19 @@ export class FornecedorCreateComponent implements OnInit {
   }
 
   createFornecedor(): void {
-
-    if(
-      this.fornecedor.forCnpj <= 0 ||
-      !this.fornecedor.forRazaoSocial.trim() ||
-      !this.fornecedor.forNomeFantasia.trim()
-    ){
-      this.fornecedorService.showMessage('Por favor, preencha todos os campos obrigatoriosss')
+    if (
+      !this.fornecedor.forNomeFantasia.trim() ||
+      !this.fornecedor.forCnpj.trim() ||
+      !this.fornecedor.forRazaoSocial.trim() 
+      
+    ) {
+      this.fornecedorService.showMessage('Por favor, preencha todos os campos obrigatórios');
+      return; // impede envio se inválido
     }
+  
     this.fornecedorService.create(this.fornecedor).subscribe(() => {
       this.fornecedorService.showMessage('Fornecedor criado!');
-      this.router.navigate(['/fornecedores']); // Ajuste a rota conforme necessário
+      this.router.navigate(['/fornecedores']);
     });
   }
 

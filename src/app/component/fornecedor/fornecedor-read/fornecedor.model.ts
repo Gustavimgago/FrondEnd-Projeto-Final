@@ -1,6 +1,18 @@
 export interface Fornecedor{
-    forId?: number
-    forCnpj: number
-    forRazaoSocial: string
-    forNomeFantasia: string
+    forId?: number;
+    forNomeFantasia: string;
+    forCnpj: string;
+    forRazaoSocial: string;
+    
+    // Contato
+    conCelular: string;
+    conTelefoneComercial: string;
+    conEmail: string;
+  
+    // Endereço
+    endRua: string;
+    endNumero: string;
+    endCidade: string;
+    endCep: string;
+    endEstado: string;
 }

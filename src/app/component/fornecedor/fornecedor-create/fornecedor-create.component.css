@@ -1,20 +1,20 @@
-form{
+form {
     display: flex;
     flex-direction: column;
 }
 
 .button-container {
     display: flex;
-    justify-content:flex-start; /* Espaça os botões */
+    justify-content: flex-start; /* Espaça os botões */
     margin-top: 20px; /* Espaço acima dos botões */
     gap: 10px;
 }
 
-button{
+button {
     background-color: #b52c00; /* Vermelho */
     border: none; /* Sem borda */
     color: rgb(255, 255, 255); /* Texto branco */
-    padding: 15px 32px;; /* Espaçamento interno */
+    padding: 15px 32px; /* Espaçamento interno */
     text-align: center; /* Centraliza o texto */
     text-decoration: none; /* Remove sublinhado */
     display: table-cell; /* Permite definir largura e altura */
@@ -23,16 +23,32 @@ button{
     cursor: pointer; /* Muda o cursor ao passar o mouse */
     border-radius: 8px; /* Bordas arredondadas */
     transition: background-color 0.3s, transform 0.2s; /* Transição suave */
-    }
-    
-    button:hover {
-    background-color: #8c0005; /* Vermelho mais escuro ao passar o mouse */
-    }
-    
-    button:active {
-    transform: scale(0.95); /* Efeito de pressionar */
-    }
+}
 
-    mat-card {
-        box-shadow: none; /* Remove a sombra, se houver */
-    }
+button:hover {
+    background-color: #8c0005; /* Vermelho mais escuro ao passar o mouse */
+}
+
+button:active {
+    transform: scale(0.95); /* Efeito de pressionar */
+}
+
+mat-card {
+    box-shadow: none; /* Remove a sombra, se houver */
+}
+
+.Contato {
+    font-family: 'Arial', sans-serif; /* Altere para a fonte desejada */
+    font-size: 15px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    margin-top: 20px; /* Espaço acima do texto */
+    margin-bottom: 10px;
+}
+
+.Endereco {
+    font-family: 'Arial', sans-serif; /* Altere para a fonte desejada */
+    font-size: 15px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    margin-top: 20px; /* Espaço acima do texto */
+    margin-bottom: 10px;
+}
