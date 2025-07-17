@@ -20,6 +20,7 @@ import { ClienteDeleteComponent } from './component/cliente/cliente-delete/clien
 
 
 
+
 // Define as rotas da aplicação
 const routes: Routes = [
   {
@@ -90,8 +91,7 @@ const routes: Routes = [
   {
     path: "cliente/delete/:cliId",
     component: ClienteDeleteComponent
-  }
-
+  },
 
 ];
 

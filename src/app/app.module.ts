@@ -75,6 +75,7 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
     ClienteUpdateComponent,
     ClienteDeleteComponent,
     ClienteCrudComponent,
+  
     
   ],
   imports: [
