@@ -40,13 +40,12 @@ export class ProductCreateComponent implements OnInit {
 
     if(
       !this.product.proNome.trim() ||
-      this.product.proPrecoCusto <= 0 ||
-      this.product.proPrecoVenda <= 0 ||
+      this.product.proPrecoCusto < 0 ||
+      this.product.proPrecoVenda < 0 ||
       !this.product.proDescricao.trim() ||
-      this.product.proQuantidadeStock <= 0 ||
+      this.product.proQuantidadeStock < 0 ||
       !this.product.proStatus.trim() ||
       !this.product.proCategoria.trim() ||
-      !this.product.proCodigoBarras.trim() ||
       !this.product.proMarca.trim()
     ){
       this.productService.showMessage('Por favor, preencha todos os campos obrigatorios')

@@ -4,7 +4,7 @@ export interface Fornecedor{
     forCnpj: string;
     forRazaoSocial: string;
     
-    // Contato
+    
     conCelular: string;
     conTelefoneComercial: string;
     conEmail: string;
