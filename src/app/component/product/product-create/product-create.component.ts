@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Product } from '../product-read/product.model';
 import { ProductService } from '../product.service';
 import { NgForm } from '@angular/forms';
+import { Fornecedor } from '../../fornecedor/fornecedor-read/fornecedor.model';
+import { FornecedorService } from '../../fornecedor/fornecedor.service';
 
 
 @Component({
@@ -25,14 +27,20 @@ export class ProductCreateComponent implements OnInit {
     proCodigoBarras: '' ,
     proMarca: '' ,
     proDataCadastro: new Date,
-    proDataAtualizacao: new Date
+    proDataAtualizacao: new Date,
+    fornecedor: undefined
   };
 
+  fornecedores: Fornecedor[] = [];
   // Importando ProductService
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService,
+   private fornecedorService: FornecedorService,  
+  private router: Router) { }
  
   ngOnInit(): void {
-    // Inicializações adicionais, se necessário
+    this.fornecedorService.read().subscribe((fornecedores: Fornecedor[]) => {
+      this.fornecedores = fornecedores; // Atribuindo a lista de fornecedores
+    });
   }
 
   // Método chamado quando o botão "Salvar" é clicado
@@ -46,7 +54,8 @@ export class ProductCreateComponent implements OnInit {
       this.product.proQuantidadeStock < 0 ||
       !this.product.proStatus.trim() ||
       !this.product.proCategoria.trim() ||
-      !this.product.proMarca.trim()
+      !this.product.proMarca.trim() ||
+      !this.product.fornecedor 
     ){
       this.productService.showMessage('Por favor, preencha todos os campos obrigatorios')
       return;

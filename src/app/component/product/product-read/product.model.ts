@@ -1,3 +1,5 @@
+import { Fornecedor } from "../../fornecedor/fornecedor-read/fornecedor.model"
+
 export interface Product{ // Exportando a interface Product
     proId?: number
     proNome: string
@@ -11,4 +13,5 @@ export interface Product{ // Exportando a interface Product
     proMarca: string 
     proDataCadastro: Date
     proDataAtualizacao: Date
+    fornecedor?: Fornecedor
 }

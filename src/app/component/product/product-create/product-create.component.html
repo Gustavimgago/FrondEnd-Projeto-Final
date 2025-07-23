@@ -36,6 +36,25 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+      <mat-label>Categoria</mat-label>
+      <input matInput placeholder="" [(ngModel)]="product.proCategoria" name="proCategoria" required maxlength="30">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Código de barras</mat-label>
+    <input matInput placeholder="" [(ngModel)]="product.proCodigoBarras" name="proCodigoBarras" required maxlength="14">
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>Fornecedor</mat-label>
+  <mat-select [(ngModel)]="product.fornecedor" name="fornecedor" required #fornecedorNgModel="ngModel">
+    <mat-option *ngFor="let fornecedorItem of fornecedores" [value]="fornecedorItem">
+      {{ fornecedorItem.forNomeFantasia }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+    <mat-form-field appearance="outline">
         <mat-label>Marca</mat-label>
         <input matInput placeholder="" [(ngModel)]="product.proMarca" name="proMarca" required maxlength="50">
     </mat-form-field>

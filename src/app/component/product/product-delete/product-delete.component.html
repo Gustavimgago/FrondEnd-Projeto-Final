@@ -32,6 +32,16 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline">
+            <mat-label>Categoria</mat-label>
+            <input matInput placeholder="" [(ngModel)]="product.proCategoria" name="proCategoria" disabled>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Código de barras</mat-label>
+          <input matInput placeholder="" [(ngModel)]="product.proCodigoBarras" name="proCodigoBarras" disabled>
+      </mat-form-field>
+
+        <mat-form-field appearance="outline">
             <mat-label>Marca</mat-label>
             <input matInput placeholder="" [value]="product.proMarca" name="proMarca" disabled>
         </mat-form-field>

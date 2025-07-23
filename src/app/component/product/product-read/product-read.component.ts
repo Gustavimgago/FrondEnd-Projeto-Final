@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ProductReadComponent implements OnInit {
 
   products!: MatTableDataSource<Product>; // Array de produtos 
-  displayedColumns = ['proId', 'proNome', 'proPrecoCusto', 'proPrecoVenda', 'proDescricao','proQuantidadeStock', 'proStatus', 'proMarca','action']; // Colunas da tabela
+  displayedColumns = ['proId', 'proNome', 'proPrecoCusto', 'proPrecoVenda', 'proDescricao','proQuantidadeStock', 'proStatus', 'proCategoria', 'proCodigoBarras','proMarca', 'fornecedor','action']; // Colunas da tabela
 
   constructor(private productService: ProductService) { } // Construtor do componente
 
