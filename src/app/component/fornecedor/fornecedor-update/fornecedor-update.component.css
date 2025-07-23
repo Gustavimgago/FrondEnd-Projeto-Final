@@ -36,3 +36,19 @@ button{
     mat-card {
         box-shadow: none; /* Remove a sombra, se houver */
     }
+
+    .Contato {
+        font-family: 'Arial', sans-serif; /* Altere para a fonte desejada */
+        font-size: 15px; /* Tamanho da fonte */
+        font-weight: bold; /* Negrito */
+        margin-top: 20px; /* Espaço acima do texto */
+        margin-bottom: 10px;
+    }
+    
+    .Endereco {
+        font-family: 'Arial', sans-serif; /* Altere para a fonte desejada */
+        font-size: 15px; /* Tamanho da fonte */
+        font-weight: bold; /* Negrito */
+        margin-top: 20px; /* Espaço acima do texto */
+        margin-bottom: 10px;
+    }
