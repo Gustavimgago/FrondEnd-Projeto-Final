@@ -1,0 +1,17 @@
+table{
+    width: 100%;
+}
+
+.edit > i{
+    color: #d9cd26;
+}
+
+.delete > i{
+    color: #e35e6b;
+}
+
+.search-field {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px; /* Espaçamento abaixo da barra de pesquisa */
+}

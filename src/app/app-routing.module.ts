@@ -17,6 +17,14 @@ import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.componen
 import { ClienteCreateComponent } from './component/cliente/cliente-create/cliente-create.component';
 import { ClienteUpdateComponent } from './component/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './component/cliente/cliente-delete/cliente-delete.component';
+import { VendaCrudComponent } from './views/venda-crud/venda-crud.component';
+import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-crud.component';
+import { FuncionarioCreateComponent } from './component/funcionario/funcionario-create/funcionario-create.component';
+import { FuncionarioUpdateComponent } from './component/funcionario/funcionario-update/funcionario-update.component';
+import { FuncionarioDeleteComponent } from './component/funcionario/funcionario-delete/funcionario-delete.component';
+import { VendaCreateComponent } from './component/venda/venda-create/venda-create.component';
+import { VendaUpdateComponent } from './component/venda/venda-update/venda-update.component';
+import { VendaDeleteComponent } from './component/venda/venda-delete/venda-delete.component';
 
 
 
@@ -92,6 +100,38 @@ const routes: Routes = [
     path: "cliente/delete/:cliId",
     component: ClienteDeleteComponent
   },
+  {
+    path:"vendas",
+    component: VendaCrudComponent
+  },
+  {
+  path:"funcionarios",
+  component: FuncionarioCrudComponent
+},
+{
+  path: "funcionarios/create", 
+  component: FuncionarioCreateComponent 
+},
+  {
+  path:"funcionarios/update/:id",
+  component: FuncionarioUpdateComponent
+},
+{
+  path: "funcionarios/delete/:funId",
+component: FuncionarioDeleteComponent
+},
+{
+  path: "vendas/create", 
+  component: VendaCreateComponent 
+},
+{
+  path:"vendas/update/:id",
+  component: VendaUpdateComponent
+},
+ {
+  path:"vendas/delete/:vndId",
+  component: VendaDeleteComponent
+}
 
 ];
 
