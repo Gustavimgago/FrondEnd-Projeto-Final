@@ -56,6 +56,8 @@ import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-c
 import { VendaUpdateComponent } from './component/venda/venda-update/venda-update.component';
 import { VendaDeleteComponent } from './component/venda/venda-delete/venda-delete.component';
 
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 
@@ -117,6 +119,7 @@ import { VendaDeleteComponent } from './component/venda/venda-delete/venda-delet
     MatTableModule,
     MatSelectModule,
     MatOptionModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
