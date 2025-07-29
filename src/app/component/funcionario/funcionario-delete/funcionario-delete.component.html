@@ -1,1 +1,78 @@
-<p>funcionario-delete works!</p>
+<mat-card>
+    <mat-card-title>Novo Funcionario</mat-card-title>
+
+    <form #form="ngForm">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="" [(ngModel)]="funcionario.funciNome" name="funciNome" required maxlength="100" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Cargo</mat-label>
+            <input matInput placeholder="" [(ngModel)]="funcionario.funciCargo" name="funciCargo" required maxlength="100" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input matInput placeholder="###.###.###-##" [(ngModel)]="funcionario.funciCpf" name="funciCpf" required maxlength="100" disabled>
+        </mat-form-field>
+
+        <mat-label class="Contato">Contato</mat-label>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="" [(ngModel)]="funcionario.conEmail" name="conEmail" required email maxlength="100" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Celular</mat-label>
+            <input matInput placeholder="(00) 00000-0000" [(ngModel)]="funcionario.conCelular" name="conCelular" required disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Telefone Comercial</mat-label>
+            <input matInput placeholder="(00) 0000-0000" [(ngModel)]="funcionario.conTelefoneComercial" name="conTelefoneComercial" disabled>
+        </mat-form-field>
+
+        <mat-label class="Endereco">Endereço</mat-label>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Rua</mat-label>
+            <input matInput placeholder="" [(ngModel)]="funcionario.endRua" name="endRua" required disabled>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Número</mat-label>
+            <input matInput placeholder="" [(ngModel)]="funcionario.endNumero" name="endNumero" required disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input matInput placeholder="" [(ngModel)]="funcionario.endCidade" name="endCidade" required disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>CEP</mat-label>
+            <input matInput placeholder="#####-###" [(ngModel)]="funcionario.endCep" name="endCep" required maxlength="10" disabled>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+            <input matInput placeholder="" [(ngModel)]="funcionario.endEstado" name="endEstado" required disabled>
+        </mat-form-field>
+
+    </form>
+
+    <div class="button-container">
+        <button  mat-raised-button (click)="deleteFuncionario()" color="primary">
+            Deletar
+        </button>
+
+        <button  mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </div>
+
+</mat-card>
+

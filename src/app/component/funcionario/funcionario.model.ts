@@ -1,5 +1,5 @@
 export interface Funcionario {
-  funId?: number;
+  funciId?: number;
   funciNome: string;
   funciCargo: string;
   funciCpf: string;

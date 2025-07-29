@@ -1,45 +1,26 @@
+// venda-read.component.ts
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatSelectChange } from '@angular/material/select';
-import { Venda } from './venda.model';
 import { VendaService } from '../venda.service';
+import { Venda } from '../venda.model';
 
 @Component({
   selector: 'app-venda-read',
-  templateUrl: './venda-read.component.html',
-  styleUrls: ['./venda-read.component.css']
+  templateUrl: './venda-read.component.html'
 })
-export class VendaReadComponent implements OnInit{
 
-  
-  vendas = new MatTableDataSource<Venda>();
+export class VendaReadComponent implements OnInit {
 
-  displayedColumns: string[] = [
+  vendas: Venda[] = [];
 
-    'vndId',
-    'cliente',
-    'formaPagamento',
-    'vndConcluida',
-    'vndDataVenda',
-    'vndTotal',
-    'action'
-  ];
+  displayedColumns = ['id', 'cliente', 'data', 'total', 'actions'];
 
   constructor(private vendaService: VendaService) {}
-
+  
   ngOnInit(): void {
-    this.loadVendas();
-  }
-
-  loadVendas(): void {
     this.vendaService.read().subscribe(vendas => {
-      this.vendas.data = vendas;
+      this.vendas = vendas;
     });
   }
 
-  aplicarFiltro(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.vendas.filter = filterValue.trim().toLowerCase();
-  }
-
 }
+

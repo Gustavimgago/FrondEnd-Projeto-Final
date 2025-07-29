@@ -120,18 +120,14 @@ const routes: Routes = [
   path: "funcionarios/delete/:funId",
 component: FuncionarioDeleteComponent
 },
-{
-  path: "vendas/create", 
+{ path: 'vendas/create', 
   component: VendaCreateComponent 
 },
-{
-  path:"vendas/update/:id",
-  component: VendaUpdateComponent
+{ path: 'vendas/update/:id', 
+  component: VendaUpdateComponent 
 },
- {
-  path:"vendas/delete/:vndId",
-  component: VendaDeleteComponent
-}
+{ path: 'vendas/delete/:id', 
+  component: VendaDeleteComponent }
 
 ];
 

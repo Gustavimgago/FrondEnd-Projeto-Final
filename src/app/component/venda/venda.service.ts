@@ -1,49 +1,34 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Venda } from './venda-read/venda.model';
-
+import { Venda } from './venda.model';
 @Injectable({
   providedIn: 'root'
 })
 export class VendaService {
 
-  baseUrl = "https://localhost:8080/vendas"
+  private baseUrl = 'http://localhost:8080/vendas';
+
+  constructor(private http: HttpClient) {}
+
+  create(venda: Venda): Observable<Venda> {
+    return this.http.post<Venda>(this.baseUrl, venda);
+  }
+
+  read(): Observable<Venda[]> {
+    return this.http.get<Venda[]>(this.baseUrl);
+  }
+
+  readById(id: number): Observable<Venda> {
+    return this.http.get<Venda>(`${this.baseUrl}/${id}`);
+  }
+
+  update(venda: Venda): Observable<Venda> {
+    return this.http.put<Venda>(`${this.baseUrl}/${venda.vndId}`, venda);
+  }
+
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
   
-
-  constructor( private snackBar: MatSnackBar, private http: HttpClient) { }
-
-  showMessage(msg: string): void{
-    this.snackBar.open(msg, 'X',{
-      duration: 3000,
-      horizontalPosition: "right",
-      verticalPosition: "top"
-    })
-  }
-
-  create(vendas: Venda): Observable<Venda>{
-    return this.http.post<Venda>(this.baseUrl, vendas)
-  }
-
-  read(): Observable<Venda[]>{
-    return this.http.get<Venda[]>(this.baseUrl)
-  }
-
-  readById(id: string): Observable<Venda>{
-    const url = `${this.baseUrl}/${id}`
-    return this.http.get<Venda>(url)
-  }
-
-  update(vendas :Venda): Observable<Venda>{
-    const url = `${this.baseUrl}/${vendas.vndId}`
-    return this.http.put<Venda>(url, vendas)
-  }
-
-  delete(id: number): Observable<Venda>{
-    const url = `${this.baseUrl}/${id}`
-    return this.http.delete<Venda>(url)
-  }
-
-
 }

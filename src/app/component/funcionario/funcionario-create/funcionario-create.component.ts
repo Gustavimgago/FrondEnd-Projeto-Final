@@ -55,10 +55,6 @@ export class FuncionarioCreateComponent implements OnInit{
       this.funcionarioService.showMessage('Funcionario criado com sucesso!');
       this.router.navigate(['/funcionarios'])
     },
-    error: (err) =>{
-      console.error('Erro ao criar o funcionario:', err);
-      this.funcionarioService.showMessage('Err ao criar funcionario!');
-    }
   });
 }
 

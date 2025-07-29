@@ -30,19 +30,19 @@ export class FuncionarioService {
       return this.http.get<Funcionario[]>(this.baseUrl)
     }
    
-    readById(funId: string): Observable<Funcionario>{
-      const url = `${this.baseUrl}/${funId}`
+    readById(funciId: string): Observable<Funcionario>{
+      const url = `${this.baseUrl}/${funciId}`
       return this.http.get<Funcionario>(url)
     }
   
     update(funcionario: Funcionario): Observable<Funcionario>{
-      const url = `${this.baseUrl}/${funcionario.funId}`
+      const url = `${this.baseUrl}/${funcionario.funciId}`
       return this.http.put<Funcionario>(url, funcionario)
     }
   
   
-    delete(funId: number): Observable<Funcionario>{
-      const url = `${this.baseUrl}/${funId}`
+    delete(id: number): Observable<Funcionario>{
+      const url = `${this.baseUrl}/${id}`
       return this.http.delete<Funcionario>(url)
     }
 }
