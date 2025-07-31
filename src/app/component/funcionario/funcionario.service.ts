@@ -11,7 +11,6 @@ export class FuncionarioService {
   baseUrl = "http://localhost:8080/funcionarios"; // URL base da API
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-
     /** Exibe uma mensagem de notificação. */
     showMessage(msg: string): void {
       this.snackBar.open(msg, 'X', {
@@ -20,7 +19,6 @@ export class FuncionarioService {
         verticalPosition: "top"
       });
     }
-
 
     create(funcionario: Funcionario): Observable<Funcionario>{
       return this.http.post<Funcionario>(this.baseUrl, funcionario)

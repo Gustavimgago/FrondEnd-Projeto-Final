@@ -109,7 +109,7 @@ const routes: Routes = [
   component: FuncionarioUpdateComponent
 },
 {
-  path: "funcionarios/delete/:funId",
+  path: "funcionarios/delete/:funciId",
 component: FuncionarioDeleteComponent
 }
 

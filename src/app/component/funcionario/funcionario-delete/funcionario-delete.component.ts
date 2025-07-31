@@ -25,14 +25,9 @@ export class FuncionarioDeleteComponent implements OnInit {
     }
 
     deleteFuncionario(): void {
-      this.funcionarioService.delete(this.funcionario.funciId!).subscribe({
-        next: () => {
-          this.funcionarioService.showMessage('Funcionario excluído com sucesso!');
-          this.router.navigate(['/funcionarios']);
-        },
-        error: () => {
-          this.funcionarioService.showMessage('Erro ao excluir o funcionario.');
-        }
+      this.funcionarioService.delete(this.funcionario.funciId!).subscribe(() => {
+        this.funcionarioService.showMessage('Funcionario excluído com sucesso!');
+        this.router.navigate(['/funcionarios']);
       });
     }
 
