@@ -10,22 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FuncionarioDeleteComponent implements OnInit {
 
-  funcionario: Funcionario = {
-    funciNome: "",
-    funciCargo: "",
-    funciCpf: "",
-
-    endRua: "",
-    endNumero: "",
-    endCidade: "",
-    endCep: "",
-    endEstado: "",
-  
-    conEmail: "",
-    conCelular: "",
-    conTelefoneComercial: ""
-
-  };
+  funcionario!: Funcionario;
 
   constructor(
     private funcionarioService: FuncionarioService,
@@ -40,9 +25,14 @@ export class FuncionarioDeleteComponent implements OnInit {
     }
 
     deleteFuncionario(): void {
-      this.funcionarioService.delete(this.funcionario.funciId!).subscribe(() => {
-        this.funcionarioService.showMessage('Funcionario excluído com sucesso!');
-        this.router.navigate(['/funcionarios']);
+      this.funcionarioService.delete(this.funcionario.funciId!).subscribe({
+        next: () => {
+          this.funcionarioService.showMessage('Funcionario excluído com sucesso!');
+          this.router.navigate(['/funcionarios']);
+        },
+        error: () => {
+          this.funcionarioService.showMessage('Erro ao excluir o funcionario.');
+        }
       });
     }
 

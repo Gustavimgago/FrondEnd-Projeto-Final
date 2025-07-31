@@ -45,16 +45,12 @@ import { ClienteDeleteComponent } from './component/cliente/cliente-delete/clien
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { VendaCreateComponent } from './component/venda/venda-create/venda-create.component';
-import { VendaCrudComponent } from './views/venda-crud/venda-crud.component';
-import { VendaReadComponent } from './component/venda/venda-read/venda-read.component';
 import { FuncionarioReadComponent } from './component/funcionario/funcionario-read/funcionario-read.component';
 import { FuncionarioCreateComponent } from './component/funcionario/funcionario-create/funcionario-create.component';
 import { FuncionarioUpdateComponent } from './component/funcionario/funcionario-update/funcionario-update.component';
 import { FuncionarioDeleteComponent } from './component/funcionario/funcionario-delete/funcionario-delete.component';
 import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-crud.component';
-import { VendaUpdateComponent } from './component/venda/venda-update/venda-update.component';
-import { VendaDeleteComponent } from './component/venda/venda-delete/venda-delete.component';
+
 
 import { MatIconModule } from '@angular/material/icon';
 
@@ -90,17 +86,12 @@ import { MatIconModule } from '@angular/material/icon';
     ClienteUpdateComponent,
     ClienteDeleteComponent,
     ClienteCrudComponent,
-    VendaCreateComponent,
-    VendaCrudComponent,
-    VendaReadComponent,
     FuncionarioReadComponent,
     FuncionarioCreateComponent,
     FuncionarioUpdateComponent,
     FuncionarioDeleteComponent,
     FuncionarioCrudComponent,
-    VendaUpdateComponent,
-    VendaDeleteComponent,
-  
+
     
   ],
   imports: [
