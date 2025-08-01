@@ -25,10 +25,11 @@ export class FornecedorReadComponent implements OnInit {
 
   ngOnInit(): void {
     this.fornecedorService.read().subscribe(fornecedores => { 
+      console.log(fornecedores[0]); 
       this.fornecedores = new MatTableDataSource(fornecedores);
-      console.log(fornecedores);
     });
   }
+  
 
   aplicarFiltro(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

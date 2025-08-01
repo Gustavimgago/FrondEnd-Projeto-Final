@@ -53,6 +53,9 @@ import { FuncionarioCrudComponent } from './views/funcionario-crud/funcionario-c
 
 
 import { MatIconModule } from '@angular/material/icon';
+import { NgxMaskModule } from 'ngx-mask';
+
+
 
 
 
@@ -111,6 +114,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatOptionModule,
     MatIconModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
