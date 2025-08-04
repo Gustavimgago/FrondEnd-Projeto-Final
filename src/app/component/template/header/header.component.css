@@ -2,6 +2,7 @@
     display: flex; /* Utiliza o modelo de layout flexível para alinhar os itens dentro do cabeçalho */
     align-items: center; /* Alinha os itens verticalmente ao centro */
     background-color: #5a5a5a; /* Define a cor de fundo do cabeçalho */
+    justify-content: space-between;
 }
 
 .header a {
@@ -15,7 +16,11 @@
 }
 
 .header .title-group {
-    padding-left: 25px; /* Adiciona um espaço à esquerda do grupo de título */
+    margin-left: auto; /* move para a direita */
+    display: flex;
+    align-items: center;
+    padding-right: 16px; /* opcional: dá um respiro da borda direita */
+    color: white;
 }
 
 .header .title-group i {

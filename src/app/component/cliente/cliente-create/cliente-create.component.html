@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-card-title>Novo Cliente</mat-card-title>
+    <mat-card-title>Novo cliente</mat-card-title>
 
     <form #form="ngForm">
 
@@ -49,7 +49,7 @@
 
         <mat-form-field appearance="outline">
             <mat-label>CEP</mat-label>
-            <input matInput placeholder="#####-###" [(ngModel)]="cliente.endCep" name="endCep" required maxlength="10">
+            <input  matInput mask="00000-000" [(ngModel)]="cliente.endCep" name="endCep" required maxlength="10">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
